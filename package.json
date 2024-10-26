@@ -1,0 +1,15 @@
+{
+  "name": "stevejobs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "find src/exercises -name '*.c' -exec ./node_modules/.bin/clang-format -i {} \\;"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "clang-format": "^1.8.0"
+  }
+}
