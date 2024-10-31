@@ -29,8 +29,7 @@ void main()
         {
             for (j = 0; j < lato; j++)
             {
-                if (i == 0 || i == lato - 1 || i == 4 || j == 0 ||
-                    i == lato - 1 || j == 4)
+                if (i == 0 || i == lato - 1 || j == 0 || j == lato - 1)
                 {
                     printf("* ");
                 }
