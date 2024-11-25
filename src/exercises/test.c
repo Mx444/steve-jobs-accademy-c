@@ -1,13 +1,9 @@
 #include <stdio.h>
 
-void main() {
-    int i,j;
-    int somma;
+int square(int x) { return x * x; }
 
-    i=5;
-    j=6;
-    somma = i+j;
-    
-    printf("var i=%d j=%d somma=%d\n", i, j, somma);
+void main()
+{
+    int test = square(5);
+    printf("Square of 5 is %d\n", test);
 }
-
