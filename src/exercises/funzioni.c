@@ -14,7 +14,7 @@ float media(int vett[N])
 int minimo(int vett[N])
 {
     int min = vett[0];
-    for (int i = 1; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         if (vett[i] < min)
         {
@@ -27,7 +27,7 @@ int minimo(int vett[N])
 int massimo(int vett[N])
 {
     int max = vett[0];
-    for (int i = 1; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         if (vett[i] > max)
         {
@@ -41,10 +41,9 @@ void main()
 {
 
     int scelta;
-    int i;
     int vett[N];
 
-    for (i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         printf("Inserisci il %d numero: ", i + 1);
         scanf("%d", &vett[i]);
