@@ -1,27 +1,30 @@
 #include <stdio.h>
+#define N 10
 
 void main()
 {
-    int V[4] = {1, 3, 5, 2};
-    int min, temp;
-
-    for (int i = 0; i < 4; i++)
+    int vett[N] = {2, 5, 7, 10, 9, 8, 4, 1, 0, 6};
+    int i, j;
+    int min;
+    int temp;
+    printf("[ ");
+    for (i = 0; i < N - 1; i++)
     {
         min = i;
-        for (int j = i + 1; j < 4; j++)
+        for (j = i + 1; j < N; j++)
         {
-            if (V[j] < V[min])
+            if (vett[j] < vett[min])
             {
                 min = j;
             }
         }
-        temp   = V[i];
-        V[i]   = V[min];
-        V[min] = temp;
+        temp      = vett[i];
+        vett[i]   = vett[min];
+        vett[min] = temp;
     }
-
-    for (int i = 0; i < 4; i++)
+    for (i = 0; i < N; i++)
     {
-        printf("%d ", V[i]);
+        printf("%d ", vett[i]);
     }
+    printf("] ");
 }
