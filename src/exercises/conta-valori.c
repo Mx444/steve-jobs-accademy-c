@@ -1,26 +1,33 @@
 #include <stdio.h>
-#define A 20
-#define B 10
+#define V 20
+#define D 10
+
 void main()
 {
-    int array[A] = {10, 10, 1, 1, 2, 2, 2, 3, 3, 4,
-                    4,  4,  5, 6, 6, 7, 7, 8, 8, 19};
+    int array[V] = {10, 10, 1, 1, 2, 2, 2, 3, 3, 4,
+                    4,  4,  5, 6, 6, 7, 7, 8, 2, 19};
 
     int i, j;
-    int conta[B]    = {0};
+    int conta[D]    = {0};
     int fuori_range = 0;
 
-    for (i = 0; i < A; i++)
+    for (i = 0; i < V; i++)
     {
-        if (array[i] < 0 || array[i] > 9)
+        if (array[i] < 0 || array[i] >= D)
         {
-            fuori_range++;
+            fuori_range += 1;
         }
 
-        conta[array[i]] += 1;
+        for (j = 0; j < D; j++)
+        {
+            if (array[i] == j)
+            {
+                conta[j] += 1;
+            }
+        }
     }
 
-    for (i = 0; i < B; i++)
+    for (i = 0; i < D; i++)
     {
         printf("Occorrenze di %d: %d\n", i, conta[i]);
     }
