@@ -1,11 +1,3 @@
-
-// Dato un vettore precaricato di 20 numeri interi che possono assumere valori
-// da 0 a 9, scrivere un programma che restituisca per ogni valore le occorrenze
-// presenti nel vettore. Il programma stamperà:
-// 1)  per ogni valore 0 - 9 le occorrenze trovate nel vettore
-// 2) se vengono individuati valori fuori range stamperà il numero di valori
-// fuori range
-
 #include <stdio.h>
 #define A 20
 #define B 10
