@@ -11,8 +11,8 @@
 #define B 10
 void main()
 {
-    int array[A] = {10, 0, 1, 1, 2, 2, 2, 3, 3, 4,
-                    4,  4, 5, 6, 6, 7, 7, 8, 8, 9};
+    int array[A] = {10, 10, 1, 1, 2, 2, 2, 3, 3, 4,
+                    4,  4,  5, 6, 6, 7, 7, 8, 8, 19};
 
     int i, j;
     int conta[B]    = {0};
@@ -24,10 +24,8 @@ void main()
         {
             fuori_range++;
         }
-        else
-        {
-            conta[array[i]] += 1;
-        }
+
+        conta[array[i]] += 1;
     }
 
     for (i = 0; i < B; i++)
