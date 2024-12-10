@@ -3,7 +3,13 @@
 
 int contaParole(char string[N])
 {
-    int parole = 1;
+    int parole = 0;
+
+    if (string[0] != ' ' && string[0] != '\0')
+    {
+        parole = 1;
+    }
+
     for (int i = 0; string[i] != '\0'; i++)
     {
         if (string[i] != ' ' && string[i - 1] == ' ')
@@ -17,7 +23,7 @@ int contaParole(char string[N])
 
 void main()
 {
-    char string[N] = "ida pro";
+    char string[N] = "IDA Pro";
 
     printf("Parole stringa : %d", contaParole(string));
 }
