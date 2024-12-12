@@ -2,15 +2,21 @@
 
 int main()
 {
-
     FILE* file;
+    FILE* new_file;
     char  c;
-    int   count = 0;
 
-    file = fopen("../txt/articolo_giornale.txt", "r");
+    file = fopen("../txt/articolo_giornale_1.txt", "r");
     if (file == NULL)
     {
         printf("Errore nell'apertura del file\n");
+        return 1;
+    }
+
+    new_file = fopen("../txt/articolo_giornale_new.txt", "w");
+    if (new_file == NULL)
+    {
+        printf("Errore creazione file\n");
         return 1;
     }
 
@@ -33,17 +39,22 @@ int main()
                             c = fgetc(file);
                             if (c == 'i')
                             {
-                                count++;
+                                fputc('a', new_file);
+                                fputc('l', new_file);
+                                fputc('l', new_file);
+                                fputc('i', new_file);
+                                fputc('e', new_file);
+                                fputc('v', new_file);
                             }
                         }
                     }
                 }
             }
         }
+        fputc(c, new_file);
     }
-    printf("Il numero di occorrenze della parola 'alunni' nel file e': %d\n",
-           count);
     fclose(file);
+    fclose(new_file);
 
     return 0;
 }

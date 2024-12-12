@@ -13,7 +13,7 @@ int main()
         return 1;
     }
 
-    nominativi = fopen("../txt/nominativi.txt", "w");
+    nominativi = fopen("../txt/nominativi.csv", "w");
     if (nominativi == NULL)
     {
         printf("Impossibile creare il file");
