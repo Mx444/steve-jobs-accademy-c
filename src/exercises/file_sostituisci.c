@@ -3,58 +3,30 @@
 int main()
 {
     FILE* file;
-    FILE* new_file;
-    char  c;
+    char  buffer[1000];
+    int   i, count;
 
-    file = fopen("../txt/articolo_giornale_1.txt", "r");
+    file = fopen("../txt/articolo_giornale.txt", "r");
     if (file == NULL)
     {
         printf("Errore nell'apertura del file\n");
         return 1;
     }
 
-    new_file = fopen("../txt/articolo_giornale_new.txt", "w");
-    if (new_file == NULL)
+    while (fgets(buffer, 1000, file) != NULL)
     {
-        printf("Errore creazione file\n");
-        return 1;
-    }
-
-    while ((c = fgetc(file)) != -1)
-    {
-        if (c == 'a')
+        for (i = 0, count = 0; buffer[i] != '\0'; i++)
         {
-            c = fgetc(file);
-            if (c == 'l')
+            if (buffer[i] == 'a')
             {
-                c = fgetc(file);
-                if (c == 'u')
+                if (buffer[i + 1] == 'l' && buffer[i + 2] == 'u' &&
+                    buffer[i + 3] == 'n' && buffer[i + 4] == 'n' &&
+                    buffer[i + 5] == 'i')
                 {
-                    c = fgetc(file);
-                    if (c == 'n')
-                    {
-                        c = fgetc(file);
-                        if (c == 'n')
-                        {
-                            c = fgetc(file);
-                            if (c == 'i')
-                            {
-                                fputc('a', new_file);
-                                fputc('l', new_file);
-                                fputc('l', new_file);
-                                fputc('i', new_file);
-                                fputc('e', new_file);
-                                fputc('v', new_file);
-                            }
-                        }
-                    }
+                    count++;
                 }
             }
         }
-        fputc(c, new_file);
     }
-    fclose(file);
-    fclose(new_file);
-
     return 0;
 }
